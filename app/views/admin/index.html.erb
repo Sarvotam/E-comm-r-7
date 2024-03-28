@@ -1,1 +1,50 @@
 <h1> Admin home </h1>
+
+<div class="flex justify-between w-full max-w-4xl mt-8 tems-center sflex-wrap">
+	<h2 class="mb-4 text-2xl font-medium text-gray-800">Daily Status</h2>
+	<div class="flex flex-col justify-between w-full gap-10 md:flex-row">
+		<div class="max-w-sm overflow-hidden rounded shadow-xl overflow bg-gradient-to-r from-gray-400 to-gray-300">
+			<div class="px-6 py-4">
+				<div class="mb-2 text-xl font-bold text-white">
+					Revenue
+				</div>
+				<p class="text-base text-white">
+					<%= @quick_stats[:revenue] ? (@quick_stats[:revenue]) : "0" %>
+				</p>
+			</div>
+		</div>
+
+		<div class="max-w-sm overflow-hidden rounded shadow-xl overflow bg-gradient-to-r from-gray-400 to-gray-300">
+			<div class="px-6 py-4">
+				<div class="mb-2 text-xl font-bold text-white">
+					Total Sales
+				</div>
+				<p class="text-base text-white">
+					<%= @quick_stats[:sales] ? (@quick_stats[:sales]) : "0" %>
+				</p>
+			</div>
+		</div>
+
+		<div class="max-w-sm overflow-hidden rounded shadow-xl overflow bg-gradient-to-r from-gray-400 to-gray-300">
+			<div class="px-6 py-4">
+				<div class="mb-2 text-xl font-bold text-white">
+					Average Sales
+				</div>
+				<p class="text-base text-white">
+					<%= @quick_stats[:avg_sale] ? (@quick_stats[:avg_sale]/100).to_s : "0" %>
+				</p>
+			</div>
+		</div>
+
+		<div class="max-w-sm overflow-hidden rounded shadow-xl overflow bg-gradient-to-r from-gray-400 to-gray-300">
+			<div class="px-6 py-4">
+				<div class="mb-2 text-xl font-bold text-white">
+					Items/Sale
+				</div>
+				<p class="text-base text-white">
+					<%= @quick_stats[:per_sate].to_i %>
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
